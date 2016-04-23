@@ -894,7 +894,7 @@ static int gs_usb_probe(struct usb_interface *intf, const struct usb_device_id *
 
 	if (icount > GS_MAX_INTF) {
 		dev_err(&intf->dev,
-			"Driver cannot handle more that %d CAN interfaces\n",
+			"Driver cannot handle more than %d CAN interfaces\n",
 			GS_MAX_INTF);
 		return -EINVAL;
 	}
