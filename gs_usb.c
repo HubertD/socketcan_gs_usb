@@ -207,18 +207,6 @@ static void gs_free_tx_context(struct gs_tx_context *txc)
 	txc->echo_id = GS_MAX_TX_URBS;
 }
 
-
-
-int can_change_mtu(struct net_device *dev, int new_mtu)
-{
-        struct can_priv *priv = netdev_priv(dev);
-        /* Do not allow changing the MTU while running */
-        if (dev->flags & IFF_UP)
-                return -EBUSY;
-        dev->mtu = new_mtu;
-        return 0;
-}
-
 /* Get a tx context by id.
  */
 static struct gs_tx_context *gs_get_tx_context(struct gs_can *dev, unsigned int id)
